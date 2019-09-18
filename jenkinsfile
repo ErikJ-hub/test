@@ -11,6 +11,7 @@ pipeline {
         stage("build") {
             steps {
                 echo "build"
+                cat C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe test1.py
             }
         }
     }
