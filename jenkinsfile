@@ -11,10 +11,11 @@ pipeline {
         stage("build") {
             steps {
                 echo "build"
+                echo " - 1: bat 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe test1.py'"
                 bat 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe test1.py'
-                echo "aaaaaaaaaaa"
+                echo " - 2: aaaaaaaaaaa"
                 bat 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe ./test1.py'
-                echo "bbbbbbbbb"
+                echo " - 3: bbbbbbbbb"
             }
         }
     }
