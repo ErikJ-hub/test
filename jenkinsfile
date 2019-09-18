@@ -1,0 +1,47 @@
+pipeline {
+    agent any
+    stages {
+        stage("git") {
+            steps {
+                echo "Git: https://github.com/ErikJ-hub/test.git"
+                git 'https://github.com/ErikJ-hub/test.git'
+            }
+        }
+        
+        stage("build") {
+            steps {
+                echo "build"
+            }
+        }
+    }
+    
+    post { 
+        always { 
+            echo 'always: I will always say Hello again!'
+        }
+        
+        changed {
+            echo 'Changed'
+        }
+
+        failure {
+            echo 'Failure'
+        }
+
+        success {
+            echo 'Success'
+        }
+
+        unstable {
+            echo 'unstable'
+        }
+
+        unsuccessful {
+            echo 'unsuccessful'
+        }
+
+        cleanup {
+            echo 'cleanup'
+        }
+    }
+}
