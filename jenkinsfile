@@ -11,7 +11,7 @@ pipeline {
         stage("build") {
             steps {
                 echo "build"
-                sh "C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe test1.py"
+                bat "C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe test1.py"
             }
         }
     }
