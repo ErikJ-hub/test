@@ -12,6 +12,9 @@ pipeline {
             steps {
                 echo "build"
                 bat 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe test1.py'
+                echo "aaaaaaaaaaa"
+                bat 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe ./test1.py'
+                echo "bbbbbbbbb"
             }
         }
     }
