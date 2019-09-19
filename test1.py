@@ -1,20 +1,20 @@
 print(" - Enter: Test 1")
+filename = "demo1.txt"
+compere = "1234567"
 
 try:
-    f = open("demo1.txt", "r")
+    f = open(filename, "r")
     a = f.read()
 except:
-    print("Something went wrong when writing to the file")
+    print("   -- Something went wrong when writing to the file: " + filename)
 finally:
     f.close()
 
-print("     demo1.txt: " + a + " != 11234567")
-if a == "11234567":
-    print(" >>>> OK: demo1.txt")
+print("     " + filename + ": " + a + " != " + compere)
+if a == compere:
+    print(" >>>> OK: " + filename)
 else:
-    print(" <<<<<<<<< NOK")
+    print(" <<<<<<<<< NOK: " + filename)
     exit(1)
-
-
 
 print(" - Exit:  Test 1")
