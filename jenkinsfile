@@ -1,9 +1,14 @@
 pipeline {
     agent any
+    environment {
+        GITHUB = 'https://github.com/ErikJ-hub/test.git'
+    }
+
     stages {
         stage("git") {
             steps {
                 echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter Git"
+                echo ${GITHUB}
                 echo "Git: https://github.com/ErikJ-hub/test.git"
                 git 'https://github.com/ErikJ-hub/test.git'
                 echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  Git"
