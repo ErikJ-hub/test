@@ -13,6 +13,8 @@ pipeline {
         stage("build") {
             steps {
                 echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter build"
+                echo " - : bat 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe ./build1.py'"
+                bat 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe ./build1.py'
 
                 echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  build"
             }
