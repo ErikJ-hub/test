@@ -1,12 +1,11 @@
 pipeline {
     agent any
-    def github = 'https://github.com/ErikJ-hub/test.git'
 
      stages {
         stage("git") {
             steps {
                 echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter Git"
-                echo '${github}'
+                echo '${YOUR_JENKINS_URL}'
                 echo "Git: https://github.com/ErikJ-hub/test.git"
                 git 'https://github.com/ErikJ-hub/test.git'
                 echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  Git"
