@@ -5,7 +5,7 @@ try:
     a = f.read()
     print(a)
     if a == "1234567":
-        print(" >>>> OK: demo1.txt")
+        print(" >>>> OK: demo2.txt")
     else:
         print(" <<<<<<<<< NOK")
 
