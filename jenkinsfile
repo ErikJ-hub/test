@@ -11,7 +11,7 @@ pipeline {
             steps {
                 echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter Git"
                 echo "Git: ${GITHUB}"
-                git 'https://github.com/ErikJ-hub/test.git'
+                git "${GITHUB}"
                 echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  Git"
             }
         }
