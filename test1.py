@@ -8,7 +8,7 @@ try:
         print(" >>>> OK: demo1.txt")
     else:
         print(" <<<<<<<<< NOK")
-        assert a == "1234567"
+        assert a == "11234567"
 
 except:
     print("Something went wrong when writing to the file")
