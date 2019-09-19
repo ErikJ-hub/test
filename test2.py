@@ -14,7 +14,7 @@ print("     " + filename + ": " + a + " != " + compere)
 if a == compere:
     print(" >>>> OK: " + filename)
 else:
-    print(" <<<<<<<<< NOK: " + filename)
+    print(" <<<< NOK: " + filename)
     exit(1)
 
 print(" - Exit:  Test 2")

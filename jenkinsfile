@@ -19,9 +19,8 @@ pipeline {
         stage("build") {
             steps {
                 echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter build"
-                echo " - : bat '${PYTHON} ./build1.py'"
+                echo " - : '${PYTHON} ./build1.py'"
                 bat "${PYTHON} ./build1.py"
-
                 echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  build"
             }
         }
@@ -29,11 +28,11 @@ pipeline {
         stage("test") {
             steps {
                 echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter test"
-                echo " - : bat 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe ./test1.py'"
-                bat 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe ./test1.py'
+                echo " - : '${PYTHON} ./test1.py'"
+                bat "${PYTHON} ./test1.py"
 
-                echo " - : bat 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe ./test2.py'"
-                bat 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe ./test2.py'
+                echo " - : '${PYTHON} ./test2.py'"
+                bat "${PYTHON} ./test2.py"
                 echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  test"
             }
         }
@@ -41,31 +40,38 @@ pipeline {
     
     post { 
         always { 
-            echo 'always: I will always say Hello again!'
+                echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter always"
+                echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  always"
         }
         
         changed {
-            echo 'Changed'
+                echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter changed"
+                echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  changed"
         }
 
         failure {
-            echo 'Failure'
+                echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter failure"
+                echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  failure"
         }
 
         success {
-            echo 'Success'
+                echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter success"
+                echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  success"
         }
 
         unstable {
-            echo 'unstable'
+                echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter unstable"
+                echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  unstable"
         }
 
         unsuccessful {
-            echo 'unsuccessful'
+                echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter unsuccessful"
+                echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  unsuccessful"
         }
 
         cleanup {
-            echo 'cleanup'
+                echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter cleanup"
+                echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  cleanup"
         }
     }
 }
