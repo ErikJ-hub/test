@@ -25,9 +25,7 @@ pipeline {
                 echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter test"
                 echo " - : bat 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe ./test1.py'"
                 bat 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe ./test1.py'
-            }
 
-            steps {
                 echo " - : bat 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe ./test2.py'"
                 bat 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe ./test2.py'
                 echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  test"
