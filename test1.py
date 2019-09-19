@@ -4,7 +4,7 @@ try:
     f = open("demo1.txt", "r")
     a = f.read()
     print(a)
-    if a == "1234567":
+    if a == "11234567":
         print(" >>>> OK: demo1.txt")
     else:
         print(" <<<<<<<<< NOK")
