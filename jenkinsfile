@@ -3,28 +3,30 @@ pipeline {
     stages {
         stage("git") {
             steps {
+                echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter Git"
                 echo "Git: https://github.com/ErikJ-hub/test.git"
                 git 'https://github.com/ErikJ-hub/test.git'
+                echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  Git"
             }
         }
         
         stage("build") {
             steps {
-                echo "Enter build"
+                echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter build"
 
-                echo " - : bat 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe ./test1.py'"
-                bat 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe ./test1.py'
-                echo "Exit  build"
+                echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  build"
             }
         }
 
         stage("test") {
             steps {
-                echo "Enter test"
+                echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter test"
+                echo " - : bat 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe ./test1.py'"
+                bat 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe ./test1.py'
 
                 echo " - : bat 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe ./test2.py'"
                 bat 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe ./test2.py'
-                echo "Exit  test"
+                echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  test"
             }
         }
     }
