@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         GITHUB = 'https://github.com/ErikJ-hub/test.git'
-        DB    = 'sqlite'
+        PYTHON = 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe'
     }
 
      stages {
@@ -19,8 +19,8 @@ pipeline {
         stage("build") {
             steps {
                 echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter build"
-                echo " - : bat 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe ./build1.py'"
-                bat 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe ./build1.py'
+                echo " - : bat '${PYTHON} ./build1.py'"
+                bat "${PYTHON} ./build1.py"
 
                 echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  build"
             }
