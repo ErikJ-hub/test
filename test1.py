@@ -12,6 +12,7 @@ try:
 
 except:
     print("Something went wrong when writing to the file")
+    exit()
 finally:
     f.close()
 
