@@ -2,11 +2,6 @@ import logging
 
 # level=logging.INFO  (CRITICAL, ERROR, WARNING, INFO or DEBUG) #
 logging.basicConfig(format='%(asctime)s - %(filename)s - %(levelname)s - %(message)s', level=logging.INFO)
-logging.debug('This message should go to the log file')
-logging.info('So should this')
-logging.warning('And this, too')
-logging.error('And this, too')
-logging.critical('And this, too')
 
 print(" - Enter: Test 1")
 filename = "demo1.txt"
