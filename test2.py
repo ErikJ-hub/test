@@ -1,6 +1,10 @@
+import logging
+
+logging.basicConfig(level=logging.INFO)  # CRITICAL, ERROR, WARNING, INFO or DEBUG #
+
 print(" - Enter: Test 2")
 filename = "demo2.txt"
-compere = "1234567"
+compere = "11234567"
 
 try:
     f = open(filename, "r")
@@ -15,6 +19,7 @@ if a == compere:
     print(" >>>> OK: " + filename)
 else:
     print(" <<<< NOK: " + filename)
+    logging.error('This was NOT OK')
     exit(1)
 
 print(" - Exit:  Test 2")
