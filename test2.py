@@ -2,7 +2,7 @@ import logging
 
 # logger = logging.getLogger('__name__')
 # level=logging.INFO  (CRITICAL, ERROR, WARNING, INFO or DEBUG) #
-logging.basicConfig(format='%(asctime)s - %(filename)s - %(levelname)s - %(message)s', level=logging.INFO)
+logging.basicConfig(filename='test.log', format='%(asctime)s - %(filename)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger()
 
 
