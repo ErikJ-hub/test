@@ -5,7 +5,7 @@ logging.basicConfig(format='%(asctime)s - %(filename)s - %(levelname)s - %(messa
 
 print(" - Enter: Test 2")
 filename = "demo2.txt"
-compere = "11234567"
+compere = "1234567"
 
 try:
     f = open(filename, "r")

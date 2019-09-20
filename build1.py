@@ -2,7 +2,7 @@ import logging
 
 # level=logging.INFO  (CRITICAL, ERROR, WARNING, INFO or DEBUG) #
 logging.basicConfig(format='%(asctime)s - %(filename)s - %(levelname)s - %(message)s', level=logging.INFO)
-logging.setLevel(logging.INFO)
+# logging.setLevel(logging.INFO)
 
 logging.debug('This message should go to the log file')
 logging.info('So should this')
