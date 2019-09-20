@@ -41,7 +41,6 @@ pipeline {
     post { 
         always { 
                 echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter always"
-                # more ./test.log
                 echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  always"
         }
         
