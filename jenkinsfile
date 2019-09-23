@@ -34,6 +34,8 @@ pipeline {
                 echo " - : '${PYTHON} ./test2.py'"
                 bat "${PYTHON} ./test2.py"
                 echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  test"
+
+                readFile 'test.log'
             }
         }
     }
@@ -71,6 +73,7 @@ pipeline {
 
         cleanup {
                 echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter cleanup"
+                readFile 'test.log'
                 echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  cleanup"
         }
     }
