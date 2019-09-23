@@ -13,6 +13,7 @@ try:
     a = f.read()
 except IOError:
     logger.critical('unable to open(' + filename + ')')
+    exit(1)
 finally:
     f.close()
 
@@ -21,7 +22,7 @@ if a == compere:
     print(" >>>> OK: " + filename)
 else:
     print(" <<<< NOK: " + filename)
-    logger.error('  - This was NOT OK')
+    logger.error('  - NOT OK: ' + filename + ": " + a + " != " + compere)
     exit(1)
 
 print(" - Exit:  Test 1")
