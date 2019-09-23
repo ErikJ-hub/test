@@ -5,11 +5,6 @@ logging.basicConfig(filename='test.log', format='%(asctime)s - %(filename)s - %(
 # logging.setLevel(logging.INFO)
 logger = logging.getLogger()
 
-logger.debug('This message should go to the log file')
-logger.info('So should this')
-logger.warning('And this, too')
-logger.error('And this, too')
-logger.critical('And this, too')
 
 print(" - Enter: Build 1")
 
