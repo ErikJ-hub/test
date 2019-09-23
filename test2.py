@@ -8,7 +8,7 @@ logger = logging.getLogger()
 print(__name__)
 print(" - Enter: Test 2")
 filename = "demo2.txt"
-compere = "1234567"
+compere = "11234567"
 
 try:
     f = open(filename, "r")
