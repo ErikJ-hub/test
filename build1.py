@@ -1,23 +1,40 @@
 import logging
 
-f = open("test.log", "w")
-f.writelines("----------------")
-f.close()
-
 # level=logging.INFO  (CRITICAL, ERROR, WARNING, INFO or DEBUG) #
-logging.basicConfig(filename='test.log', format='%(asctime)s - %(filename)s - %(levelname)s - %(message)s', level=logging.INFO)
+logging.basicConfig(filename='test.log', format='%(asctime)s - %(filename)s - %(levelname)s - %(message)s',
+                    level=logging.INFO)
 # logging.setLevel(logging.INFO)
 logger = logging.getLogger()
 
+try:
+    f = open("test.log", "w")
+except IOError:
+    logger.critical('unable to open(test.log)')
+    exit(1)
+finally:
+    f.writelines("----------------")
+    f.writelines("--  test.log  --")
+    f.writelines("----------------")
+    f.close()
 
 print(" - Enter: Build 1")
 
-f = open("demo1.txt", "w")
-f.writelines("1234567")
-f.close()
+try:
+    f = open("demo1.txt", "w")
+except IOError:
+    logger.critical('unable to open(demo1.txt)')
+    exit(1)
+finally:
+    f.writelines("1234567")
+    f.close()
 
-f = open("demo2.txt", "w")
-f.writelines("1234567")
-f.close()
+try:
+    f = open("demo2.txt", "w")
+except IOError:
+    logger.critical('unable to open(demo2.txt)')
+    exit(1)
+finally:
+    f.writelines("1234567")
+    f.close()
 
 print(" - Exit:  Build 1")
