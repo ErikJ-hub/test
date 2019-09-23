@@ -31,13 +31,9 @@ pipeline {
                 echo " - : '${PYTHON} ./test1.py'"
                 bat "${PYTHON} ./test1.py"
 
-                readFile 'test.log'
-
                 echo " - : '${PYTHON} ./test2.py'"
                 bat "${PYTHON} ./test2.py"
                 echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  test"
-
-                readFile 'test.log'
             }
         }
     }
