@@ -12,9 +12,9 @@ except IOError:
     logger.critical('unable to open(test.log)')
     exit(1)
 finally:
-    f.writelines("----------------")
-    f.writelines("--  test.log  --")
-    f.writelines("----------------")
+    f.writelines("----------------\n")
+    f.writelines("--  test.log  --\n")
+    f.writelines("----------------\n")
     f.close()
 
 print(" - Enter: Build 1")
