@@ -1,9 +1,11 @@
 import logging
 
-# logger = logging.getLogger('__name__')
 # level=logging.INFO  (CRITICAL, ERROR, WARNING, INFO or DEBUG) #
-logging.basicConfig(filename='test.log', format='%(asctime)s - %(filename)s - %(levelname)s - %(message)s', level=logging.INFO)
-logger = logging.getLogger()
+logging.basicConfig(filename='test.log',
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    level=logging.INFO)
+logger = logging.getLogger('test2')
+# logger.setLevel(logging.DEBUG)
 
 logger.info('Enter: Test 2')
 
