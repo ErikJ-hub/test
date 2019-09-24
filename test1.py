@@ -4,6 +4,7 @@ import logging
 logging.basicConfig(filename='test.log', format='%(asctime)s - %(filename)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger()
 
+logger.info('Enter: Test 1')
 print(" - Enter: Test 1")
 filename = "demo1.txt"
 compere = "1234567"
@@ -26,3 +27,4 @@ else:
     exit(1)
 
 print(" - Exit:  Test 1")
+logger.info('Exit:  Test 1')

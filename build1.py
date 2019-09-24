@@ -6,6 +6,8 @@ logging.basicConfig(filename='test.log', format='%(asctime)s - %(filename)s - %(
 # logging.setLevel(logging.INFO)
 logger = logging.getLogger()
 
+logger.info('Start: Build 1')
+
 try:
     f = open("test.log", "w")
 except IOError:
@@ -38,3 +40,4 @@ finally:
     f.close()
 
 print(" - Exit:  Build 1")
+logger.info('Exit:  Build 1')
