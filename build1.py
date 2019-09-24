@@ -1,12 +1,11 @@
 import logging
 
 # level=logging.INFO  (CRITICAL, ERROR, WARNING, INFO or DEBUG) #
-logging.basicConfig(filename='test.log', format='%(asctime)s - %(filename)s - %(levelname)s - %(message)s',
-                    level=logging.INFO)
+logging.basicConfig(filename='test.log', format='%(asctime)s - %(filename)s - %(levelname)s - %(message)s', level=logging.INFO)
 # logging.setLevel(logging.INFO)
 logger = logging.getLogger()
 
-logger.info('Start: Build 1')
+
 
 try:
     f = open("test.log", "w")
@@ -19,6 +18,7 @@ finally:
     f.writelines("----------------\n")
     f.close()
 
+logger.info('Start: Build 1')
 print(" - Enter: Build 1")
 
 try:
