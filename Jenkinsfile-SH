@@ -3,7 +3,6 @@ pipeline {
 
     environment {
         GITHUB = 'https://github.com/ErikJ-hub/test.git'
-        PYTHON = 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe'
     }
 
      stages {
@@ -19,8 +18,9 @@ pipeline {
         stage("build") {
             steps {
                 echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter build"
-                echo " - : '${PYTHON} ./build1.py'"
-                bat "${PYTHON} ./build1.py"
+                sh 'python --version'
+                echo " - : 'python ./build1.py'"
+                sh 'python ./build1.py'
                 echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  build"
             }
         }
@@ -28,11 +28,11 @@ pipeline {
         stage("test") {
             steps {
                 echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter test"
-                echo " - : '${PYTHON} ./test1.py'"
-                bat "${PYTHON} ./test1.py"
+                echo " - : 'python ./test1.py'"
+                sh 'python ./test1.py'
 
-                echo " - : '${PYTHON} ./test2.py'"
-                bat "${PYTHON} ./test2.py"
+                echo " - : 'python ./test2.py'"
+                sh 'python ./test2.py'
                 echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  test"
             }
         }
@@ -71,7 +71,7 @@ pipeline {
 
         cleanup {
                 echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter cleanup"
-                bat label: '', script: 'more test.log'
+                more 'test.log'
                 echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  cleanup"
         }
     }
