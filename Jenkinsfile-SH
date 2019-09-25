@@ -1,1 +1,78 @@
-# TO DO
+pipeline {
+    agent any
+
+    environment {
+        GITHUB = 'https://github.com/ErikJ-hub/test.git'
+        PYTHON = 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe'
+    }
+
+     stages {
+        stage("git") {
+            steps {
+                echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter Git"
+                echo "Git: ${GITHUB}"
+                git "${GITHUB}"
+                echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  Git"
+            }
+        }
+
+        stage("build") {
+            steps {
+                echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter build"
+                echo " - : '${PYTHON} ./build1.py'"
+                bat "${PYTHON} ./build1.py"
+                echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  build"
+            }
+        }
+
+        stage("test") {
+            steps {
+                echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter test"
+                echo " - : '${PYTHON} ./test1.py'"
+                bat "${PYTHON} ./test1.py"
+
+                echo " - : '${PYTHON} ./test2.py'"
+                bat "${PYTHON} ./test2.py"
+                echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  test"
+            }
+        }
+    }
+
+    post {
+        always {
+                echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter always"
+                echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  always"
+        }
+
+        changed {
+                echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter changed"
+                echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  changed"
+        }
+
+        failure {
+                echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter failure"
+                echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  failure"
+        }
+
+        success {
+                echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter success"
+                echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  success"
+        }
+
+        unstable {
+                echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter unstable"
+                echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  unstable"
+        }
+
+        unsuccessful {
+                echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter unsuccessful"
+                echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  unsuccessful"
+        }
+
+        cleanup {
+                echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter cleanup"
+                bat label: '', script: 'more test.log'
+                echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  cleanup"
+        }
+    }
+}
