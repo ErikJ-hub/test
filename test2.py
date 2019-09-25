@@ -27,7 +27,7 @@ if a == compere:
     print(" >>>> OK: " + filename)
 else:
     print(" <<<< NOK: " + filename  + ": " + a + " != " + compere)
-    logger.error('  - NOT OK: ' + filename + ": " + a + " != " + compere)
+    logger.error('NOT OK: ' + filename + ": " + a + " != " + compere)
     exit(1)
 
 print(" - Exit:  Test 2")
