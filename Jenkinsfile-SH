@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     environment {
-        GITHUB = 'https://github.com/ErikJ-hub/test.git'
         TEST_LOGFILE = 'test.log'
     }
 
@@ -10,8 +9,8 @@ pipeline {
 /*        stage("git") {
             steps {
                 echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter Git"
-                echo "Git: ${GITHUB}"
-                git "${GITHUB}"
+                echo "Git: ${GIT_URL}"
+                git "${GIT_URL}"
                 echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  Git"
             }
         }
