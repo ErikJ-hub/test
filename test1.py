@@ -1,8 +1,13 @@
 import logging
 import os
-for a in os.environ:
-    print('Var: ', a, 'Value: ', os.getenv(a))
-print("all done")
+
+test_logfile = os.getenv('TEST_LOGFILE')
+# test_logfile = os.getenv('USERNAME')
+print(test_logfile)
+
+# for a in os.environ:
+#     print('Var: ', a, 'Value: ', os.getenv(a))
+# print("all done")
 
 # level=logging.INFO  (CRITICAL, ERROR, WARNING, INFO or DEBUG) #
 logging.basicConfig(filename='test.log',
