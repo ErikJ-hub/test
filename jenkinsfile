@@ -71,8 +71,6 @@ pipeline {
 
         cleanup {
                 echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter cleanup"
-                bat label: '', script: 'more test.log'
-                // bat label: '', script: 'more ${TEST_LOGFILE}'
                 bat label: '', script: "more ${TEST_LOGFILE}"
                 echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  cleanup"
         }
