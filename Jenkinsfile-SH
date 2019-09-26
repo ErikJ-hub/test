@@ -71,7 +71,7 @@ pipeline {
 
         cleanup {
                 echo "#+#+#+#+#+#+#+#+#+#+#+#+# Enter cleanup"
-                sh 'more test.log'
+                sh 'more ${TEST_LOGFILE}'
                 echo "#-#-#-#-#-#-#-#-#-#-#-#-# Exit  cleanup"
         }
     }

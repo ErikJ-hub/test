@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        GITHUB = 'https://github.com/ErikJ-hub/test.git'
         PYTHON = 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe'
+        TEST_LOGFILE = 'test.log'
     }
 
      stages {
