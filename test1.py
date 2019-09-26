@@ -1,18 +1,20 @@
 import logging
-import os
+import log
 
-test_logfile = os.getenv('TEST_LOGFILE')
+# import os
+
+# test_logfile = os.getenv('TEST_LOGFILE')
 # test_logfile = os.getenv('USERNAME')
-print(test_logfile)
+# print(test_logfile)
 
 # for a in os.environ:
 #     print('Var: ', a, 'Value: ', os.getenv(a))
 # print("all done")
 
 # level=logging.INFO  (CRITICAL, ERROR, WARNING, INFO or DEBUG) #
-logging.basicConfig(filename='test.log',
-                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    level=logging.INFO)
+# logging.basicConfig(filename='test.log',
+#                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+#                     level=logging.INFO)
 logger = logging.getLogger('test1')
 # logger.setLevel(logging.DEBUG)
 
