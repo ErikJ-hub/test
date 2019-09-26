@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         GITHUB = 'https://github.com/ErikJ-hub/test.git'
+        TEST_LOGFILE = 'test.log'
     }
 
      stages {
