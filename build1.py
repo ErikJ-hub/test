@@ -1,9 +1,7 @@
 import logging
+import log
 
-# level=logging.INFO  (CRITICAL, ERROR, WARNING, INFO or DEBUG) #
-logging.basicConfig(filename='test.log',
-                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    level=logging.INFO)
+
 logger = logging.getLogger('build1')
 # logger.setLevel(logging.DEBUG)
 
