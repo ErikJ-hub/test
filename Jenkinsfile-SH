@@ -1,6 +1,4 @@
-pipeline {
-    agent any
-
+properties([
     parameters([
         string(defaultValue: env.BRANCH_NAME, description: '', name: 'GERRIT_BRANCH'),
         string(defaultValue: 'osm/MON', description: '', name: 'GERRIT_PROJECT'),
@@ -10,6 +8,10 @@ pipeline {
         booleanParam(defaultValue: false, description: '', name: 'TEST_INSTALL'),
         string(defaultValue: 'artifactory-osm', description: '', name: 'ARTIFACTORY_SERVER'),
     ])
+])
+
+pipeline {
+    agent any
 
     environment {
         TEST_LOGFILE = 'test.log'
