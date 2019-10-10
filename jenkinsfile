@@ -1,9 +1,22 @@
+properties([
+    parameters([
+        string(defaultValue: env.BRANCH_NAME, description: '', name: 'GERRIT_BRANCH'),
+        string(defaultValue: 'osm/MON', description: '', name: 'GERRIT_PROJECT'),
+        string(defaultValue: env.GERRIT_REFSPEC, description: '', name: 'GERRIT_REFSPEC'),
+        string(defaultValue: env.GERRIT_PATCHSET_REVISION, description: '', name: 'GERRIT_PATCHSET_REVISION'),
+        string(defaultValue: 'https://osm.etsi.org/gerrit', description: '', name: 'PROJECT_URL_PREFIX'),
+        booleanParam(defaultValue: false, description: '', name: 'TEST_INSTALL'),
+        string(defaultValue: 'artifactory-osm', description: '', name: 'ARTIFACTORY_SERVER'),
+        string(defaultValue: 'test.log', description: '', name: 'TEST_LOGFILE'),
+    ])
+])
+
 pipeline {
     agent any
 
     environment {
         PYTHON = 'C:/Users/erik/AppData/Local/Programs/Python/Python37/python.exe'
-        TEST_LOGFILE = 'test.log'
+#        TEST_LOGFILE = 'test.log'
     }
 
      stages {
