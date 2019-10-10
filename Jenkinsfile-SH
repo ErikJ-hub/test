@@ -7,16 +7,17 @@ properties([
         string(defaultValue: 'https://osm.etsi.org/gerrit', description: '', name: 'PROJECT_URL_PREFIX'),
         booleanParam(defaultValue: false, description: '', name: 'TEST_INSTALL'),
         string(defaultValue: 'artifactory-osm', description: '', name: 'ARTIFACTORY_SERVER'),
+        string(defaultValue: 'test.log', description: '', name: 'TEST_LOGFILE'),
     ])
 ])
 
 pipeline {
     agent any
 
-    environment {
+/*    environment {
         TEST_LOGFILE = 'test.log'
     }
-
+*/
      stages {
 /*        stage("git") {
             steps {
