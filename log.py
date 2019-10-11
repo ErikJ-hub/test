@@ -2,6 +2,7 @@ import logging
 import os
 
 test = os.getenv('TEST_LOGFILE')
+
 # test_logfile = os.getenv('USERNAME')
 if test is not None:
     logging.basicConfig(filename=test,
